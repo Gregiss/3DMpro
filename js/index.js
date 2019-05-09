@@ -69,6 +69,9 @@ function clicksheader(){
      else if(id == 5){
 	$("#contato").css("left", "0%");
      }
+     else if(id == 6){
+	$("#contato").css("left", "0%");
+     }
      else{
        $("#home").css("left", "0%");
      }
