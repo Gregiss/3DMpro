@@ -6,7 +6,7 @@ $( document ).ready(function() {
 });
 
 function carrousel(){
-    var timeProximoSlide = 5000;
+    var timeProximoSlide = 15000;
     var imgCarrouselAtual = 1;
     var imgCarrouselAnterior = imgCarrouselAtual;
     var maxCarrousel = 3;

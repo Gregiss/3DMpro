@@ -278,6 +278,9 @@ top: 0%;
   z-index: 0;
   overflow: hidden;
 }
+.carrousel h1{
+	font-size: 1.1em;
+}
 .scroll .center {
   top: 50%;
   left: 50%;
@@ -395,4 +398,23 @@ h2 {
 }
 #contato {
   left: -200%;
+}
+.main .header .right{
+	float: right;
+	position: absolute;
+	right: 20px;
+	top: 4px;
+}
+.main .header .right a{
+	color: #151515;
+	position: relative;
+	top: 15px;
+	font-size: 20px;
+	margin-left: 25px;
+	cursor: pointer;
+}
+.main .header .right i{
+	margin-left: 5px;
+	position: relative;
+	left: -10px;
 }
