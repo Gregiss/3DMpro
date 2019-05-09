@@ -1,0 +1,306 @@
+@import "lesshat";
+
+:root{
+  --body: #131626;
+  --color1: #BF4D0B;
+  --white: #CEF2E1;
+  --blue: #6D81F2;
+  --bluedark: #131626;
+  --red: #EF2C48;
+  --bluewhite: #724EBF;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue);
+    border-radius: 10px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--body) !important;
+  overflow: hidden;
+}
+
+.btn {
+  position: relative;
+  border: 0 !important;
+  &:focus { outline: 0; }
+  &:active { top: 15px; }
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold !important;
+  
+  .border-radius(10);
+  .transition(all, 50ms, ease);
+  .btn(rgb(204, 204, 204), 20%);
+  
+}
+
+.btn i{
+  position: relative;
+  left: -5px;
+  top: 3px;
+  font-size: 25px;
+  padding: 3px;
+}
+
+.btn-primary {
+  .btn(#428bca);
+}
+
+.btn-success {
+  .btn(#5cb85c);
+}
+
+.btn-info {
+  .btn(#5bc0de);
+}
+
+.btn-warning {
+  .btn(#f0ad4e);
+}
+
+.btn-danger {
+  .btn(#d9534f);
+}
+
+.btn-link {
+  text-shadow: none;
+  background: none !important;
+  .box-shadow(none);
+  &:active { 
+    .box-shadow(none); 
+    top: 0;
+  }
+}
+
+.btn(@color, @percent: 10%)  {
+    border: 0;
+    text-shadow: 0px 1px 0px darken(@color, @percent);
+    background-color: @color;
+    .box-shadow(0px, 6px, 0px, darken(@color, @percent));
+    &:hover { 
+      border: 0;
+      background-color: lighten(@color, 5%) !important;
+      .box-shadow(0px, 4px, 0px, darken(@color, @percent));
+    }
+    &:active { 
+      .box-shadow(inset, 0px, 3px, 0px, darken(@color, @percent)); 
+    }
+}
+
+.main{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.75);
+}
+
+.header{
+  background: #fff;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  z-index: 10000;
+}
+
+.main .header h1{
+  color: #151515;
+  left: 20px;
+  top: -10px;
+  position: relative;
+}
+
+.main{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scroll{
+  position: relative;
+}
+
+.tabs{
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 85px;
+  top: 60px;
+  z-index: 20;
+  width: 100%;
+  position: relative;
+  background: rgba(0,0,0,.80);
+  white-space: nowrap;
+}
+
+.tabs button{
+  position: relative;
+  top: 15px;
+  left: 10px;
+  margin-left: 20px;
+}
+
+.background{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(0deg, rgba(245,83,79,0) 0%, rgba(114,78,191,0.4864320728291317) 100%);
+}
+
+.scroll .carrousel{
+  width: 100%;
+  height: 600px;
+  background: var(--body);
+  position: relative;
+  top: -160px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.scroll .center{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%; -50%);
+  background: #000;
+  color: #fff;
+  padding: 5%;
+  font-size: 22px;
+}
+
+.scroll .carrousel .image{
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  position: absolute;
+  left: -200%;
+  transform: scale(1);
+  background-size: cover;
+}
+
+.scroll .carrousel .imgactive{
+  left: 0%;
+  transform: scale(1.2);
+}
+
+.carrousel .tab{
+  position: absolute;
+  left: calc(50% - 20px);
+  bottom: 10px;
+  transform: translate(0%, -50%);
+}
+
+.carrousel .tab .ok{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: var(--blue);
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 10px;
+  box-shadow: 1px 2px 1px rgba(0,0,0,.50);
+}
+
+.carrousel .tab .active{
+  background: var(--red);
+}
+
+.video{
+  background-image: linear-gradient(to bottom,#0075ea 0,#00c6fb 90%,#fff 90%,#fff 100%);
+  width: 100%;
+  height: 500px;
+  position: relative;
+  top: -100px;
+  color: #fff;
+}
+
+.video h1,h2{
+  color: #fff;
+  position: relative;
+}
+
+.video h2{
+  font-size: 32px;
+}
+
+.video h1{
+  font-size: 55px;
+  font-weight: 500;
+}
+
+.video .left{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0%, -50%);
+}
+
+.video .right{
+  width: 400px;
+  height: 400px;
+  background-image: url("https://boaimpressao3d.com.br/wp-content/themes/bi3d2018/img/impressora3d-stella2-destaque.png");
+  background-size: cover;
+  float: right;
+  right: 10%;
+  position: relative;
+  top: 90px;
+}
+
+.pages{
+  transition: 0.3s;
+  position: absolute;
+  width: 100%;
+}
+
+.contato{
+  background-image: linear-gradient(to bottom,#0075ea 0,#00c6fb 90%,#fff 90%,#fff 100%);
+  width: 100%;
+  height: 600px;
+  color: #fff;
+}
+
+.contato h1,h2{
+  position: relative;
+  margin: 0px auto;
+}
+
+.contato p{
+  display: inline-block;
+  font-size: 32px;
+  top: 20px;
+  position: relative;
+  margin-left: 20px;
+}
+
+#home{
+  left: 0%;
+  top: 160px;
+}
+
+#contato{
+  left: -200%;
+}
